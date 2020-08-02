@@ -55,5 +55,10 @@
   },
   "bugs": {
     "url": "https://github.com/taylorbryant/gatsby-starter-tailwind/issues"
+  },
+  "prettier": {
+    "tabWidth": 4,
+    "semi": false,
+    "trailingComma": "none"
   }
 }

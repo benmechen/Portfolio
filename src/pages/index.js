@@ -1,43 +1,67 @@
-import React from "react";
+import React from "react"
 
-import Layout from "../components/layout";
-import SEO from "../components/seo";
-import catAndHumanIllustration from "../images/cat-and-human-illustration.svg";
+import SEO from "../components/seo"
+import HomePage from "../components/pages/home"
+import Header from "../components/header"
+import { useStaticQuery, graphql } from "gatsby"
 
 const IndexPage = () => {
-  return (
-    <Layout>
-      <SEO
-        keywords={[`gatsby`, `tailwind`, `react`, `tailwindcss`]}
-        title="Home"
-      />
+    const { site } = useStaticQuery(graphql`
+        query SiteTitleQuery {
+            site {
+                siteMetadata {
+                    author
+                }
+            }
+        }
+    `)
 
-      <section className="text-center">
-        <img
-          alt="Cat and human sitting on a couch"
-          className="block w-1/2 mx-auto mb-8"
-          src={catAndHumanIllustration}
-        />
+    return (
+        <div className="flex flex-col min-h-screen font-sans text-gray-900 font-body">
+            <SEO
+                keywords={[
+                    `react`,
+                    `developer`,
+                    `full stack`,
+                    `ios`,
+                    `web`,
+                    `portfolio`
+                ]}
+            />
+            <Header />
 
-        <h2 className="inline-block p-3 mb-4 text-2xl font-bold bg-yellow-400">
-          Hey there! Welcome to your first Gatsby site.
-        </h2>
+            <main>
+                <HomePage />
+            </main>
 
-        <p className="leading-loose">
-          This is a barebones starter for Gatsby styled using{` `}
-          <a
-            className="font-bold text-gray-900 no-underline"
-            href="https://tailwindcss.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Tailwind CSS
-          </a>
-          , a utility-first CSS framework.
-        </p>
-      </section>
-    </Layout>
-  );
+            <footer className="bg-black">
+                <nav className="flex justify-between max-w-4xl p-4 mx-auto text-sm md:p-8">
+                    <p className="text-white">
+                        Created by{` `}
+                        <a
+                            className="font-bold no-underline"
+                            href="https://bryant.io"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            {site.siteMetadata.author}
+                        </a>
+                    </p>
+
+                    <p>
+                        <a
+                            className="font-bold text-white no-underline"
+                            href="https://github.com/taylorbryant/gatsby-starter-tailwind"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            GitHub
+                        </a>
+                    </p>
+                </nav>
+            </footer>
+        </div>
+    )
 }
 
-export default IndexPage;
+export default IndexPage

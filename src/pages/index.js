@@ -19,6 +19,7 @@ const IndexPage = () => {
     return (
         <div className="flex flex-col min-h-screen font-sans text-gray-900 font-body">
             <SEO
+                title="Ben Mechen | Full Stack Developer"
                 keywords={[
                     `react`,
                     `developer`,

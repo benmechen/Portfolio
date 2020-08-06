@@ -3,7 +3,7 @@ import React from "react"
 
 const Layout = ({ children }) => {
     return (
-        <section className="flex flex-row items-center justify-center content-center w-screen h-screen-header max-w-4xl px-4 mx-auto md:px-8 border-black">
+        <section className="flex flex-col items-center justify-center content-center w-screen h-screen-header max-w-4xl px-4 mx-auto md:px-8 border-black">
             {children}
         </section>
     )

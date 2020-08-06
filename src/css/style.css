@@ -3,3 +3,171 @@
 @tailwind components;
 /*! purgecss end ignore */
 @tailwind utilities;
+
+
+/* Pulsing Animation */
+.waves {
+    /* background: rgba(255, 255, 255, .3) */
+    position: absolute;
+    background: black;
+    width: 50%;
+    height: 50%;
+    content: "";
+    display: block;
+    border-radius: 50%;
+}
+
+.waves:before {
+    position: absolute;
+    background: black;
+    /* margin-left: -12px; */
+    /* margin-top: -12px; */
+    width: 100%;
+    height: 100%;
+    content: "";
+    display: block;
+    border-radius: 50%;
+    animation: wave-animate 1.5s infinite ease-out;
+}
+
+.waves:after {
+    position: absolute;
+    background: black;
+    /* margin-left: -12px; */
+    /* margin-top: -12px; */
+    width: 100%;
+    height: 100%;
+    content: "";
+    display: block;
+    border-radius: 50%;
+    opacity:0;
+    animation: wave-animate 1.5s 1.5s infinite ease-out;
+}
+
+@keyframes wave-animate {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+      transform-origin: center;
+    }
+    100% {
+      transform: scale(2.3);
+      opacity: 0;
+      transform-origin: center;
+    }
+}
+
+
+/* Writing animation */
+.typewriter:after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    animation: abomination1 6.75s linear 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes abomination1 {
+    0% {
+        content: "F";
+    }
+    3% {
+        content: "Fu";
+    }
+    6% {
+        content: "Ful";
+    }
+    9% {
+        content: "Full ";
+    }
+    12% {
+        content: "Full s";
+    }
+    15% {
+        content: "Full st";
+    }
+    18% {
+        content: "Full sta";
+    }
+    21% {
+        content: "Full stac";
+    }
+    24% {
+        content: "Full stack ";
+    }
+    27% {
+        content: "Full stack w";
+    }
+    30% {
+        content: "Full stack we";
+    }
+    33% {
+        content: "Full stack web";
+    }
+    36% {
+        content: "Full stack webb";
+    }
+    39% {
+        content: "Full stack web ";
+    }
+    42% {
+        content: "Full stack web a";
+    }
+    45% {
+        content: "Full stack web an";
+    }
+    48% {
+        content: "Full stack web and ";
+    }
+    51% {
+        content: "Full stack web and a ";
+    }
+    54% {
+        content: "Full stack web and ap";
+    }
+    57% {
+        content: "Full stack web and app ";
+    }
+    60% {
+        content: "Full stack web and app d";
+    }
+    63% {
+        content: "Full stack web and app de";
+    }
+    66% {
+        content: "Full stack web and app dev";
+    }
+    69% {
+        content: "Full stack web and app deve";
+    }
+    72% {
+        content: "Full stack web and app devel";
+    }
+    75% {
+        content: "Full stack web and app devele";
+    }
+    78% {
+        content: "Full stack web and app devel";
+    }
+    81% {
+        content: "Full stack web and app develo";
+    }
+    84% {
+        content: "Full stack web and app develop";
+    }
+    87% {
+        content: "Full stack web and app develope";
+    }
+    90% {
+        content: "Full stack web and app developer";
+    }
+    93% {
+        content: "Full stack web and app developer.";
+    }
+    96% {
+        content: "Full stack web and app developer..";
+    }
+    100% {
+        content: "Full stack web and app developer...";
+    }
+}

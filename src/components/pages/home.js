@@ -10,7 +10,7 @@ const HomePage = () => {
             className="w-screen h-screen-header absolute z-0"
             options={ParticleProps}
         />
-        <Layout>
+        <Layout id="home">
             <div className="bg-black w-48 h-48 flex flex-row items-center justify-center content-center rounded-full relative">
                 <h1 className="text-3xl text-center text-white px-4 z-10">
                     Ben Mechen

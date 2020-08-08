@@ -1,9 +1,10 @@
-import React from "react"
+import React, { useRef } from "react"
 
 import SEO from "../components/seo"
-import HomePage from "../components/pages/home"
 import Header from "../components/header"
 import { useStaticQuery, graphql } from "gatsby"
+import HomePage from "../components/pages/home"
+import AboutPage from "../components/pages/about"
 
 const IndexPage = () => {
     const { site } = useStaticQuery(graphql`
@@ -15,6 +16,8 @@ const IndexPage = () => {
             }
         }
     `)
+
+    const aboutRef = useRef()
 
     return (
         <div className="flex flex-col min-h-screen font-sans text-gray-900 font-body">
@@ -29,10 +32,11 @@ const IndexPage = () => {
                     `portfolio`
                 ]}
             />
-            <Header />
+            <Header aboutRef={aboutRef} />
 
             <main>
                 <HomePage />
+                <AboutPage ref={aboutRef} />
             </main>
 
             <footer className="bg-black">
@@ -51,12 +55,20 @@ const IndexPage = () => {
 
                     <p>
                         <a
-                            className="font-bold text-white no-underline"
-                            href="https://github.com/taylorbryant/gatsby-starter-tailwind"
+                            className="font-bold text-white no-underline mr-4"
+                            href="https://github.com/benmechen/"
                             target="_blank"
                             rel="noopener noreferrer"
                         >
                             GitHub
+                        </a>
+                        <a
+                            className="font-bold text-white no-underline"
+                            href="https://www.linkedin.com/in/ben-mechen-84407b108/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            LinkedIn
                         </a>
                     </p>
                 </nav>

@@ -1,14 +1,34 @@
 import { Link } from "gatsby"
-import React, { useState } from "react"
+import React, { useState, useEffect, useRef } from "react"
+import PropTypes from "prop-types"
 
-function Header() {
+const Header = ({ aboutRef }) => {
     const [isExpanded, toggleExpansion] = useState(false)
+    const [navBackground, setNavBackground] = useState("white")
+
+    const navRef = useRef()
+
+    useEffect(() => {
+        const handleScroll = () => {
+            console.log(navRef.current.getBoundingClientRect(), aboutRef.current.getBoundingClientRect())
+            if (aboutRef.current.getBoundingClientRect().y <= navRef.current.getBoundingClientRect().height)
+                setNavBackground("black")
+            else 
+                setNavBackground("white")
+        }
+
+        document.addEventListener('scroll', handleScroll)
+
+        return () => {
+        document.removeEventListener('scroll', handleScroll)
+        }
+    }, [navBackground])
 
     return (
-        <header className="bg-white text-black sticky top-0 h-16">
+        <header className={`bg-${navBackground} transition-all duration-300 text-black sticky top-0 h-16 z-50`} ref={navRef}>
             <div className="flex flex-wrap items-center justify-between max-w-full p-4 mx-auto">
                 <Link to="/">
-                    <h1 className="flex items-center no-underline font-serif font-bold text-xl">
+                    <h1 className={`flex items-center no-underline font-serif font-bold text-xl ${navBackground === "white" ? "text-black" : "text-white"}`}>
                         BM
                     </h1>
                 </Link>
@@ -34,20 +54,20 @@ function Header() {
                 >
                     {[
                         {
-                            route: `/about`,
+                            route: `/#about`,
                             title: `About`
                         },
                         {
-                            route: `/work`,
+                            route: `/#work`,
                             title: `Work`
                         },
                         {
-                            route: `/contact`,
+                            route: `/#contact`,
                             title: `Contact`
                         }
                     ].map((link) => (
                         <Link
-                            className="block mt-4 no-underline md:inline-block md:mt-0 md:ml-6 border-b border-transparent hover:border-black"
+                            className={`block mt-4 no-underline md:inline-block md:mt-0 md:ml-6 border-b border-transparent hover:border-black ${navBackground === "white" ? "text-black" : "text-white"}`}
                             key={link.title}
                             to={link.route}
                         >
@@ -58,6 +78,10 @@ function Header() {
             </div>
         </header>
     )
+}
+
+Header.propTypes = {
+    aboutRef: PropTypes.element.isRequired
 }
 
 export default Header

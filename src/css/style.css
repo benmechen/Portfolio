@@ -4,6 +4,10 @@
 /*! purgecss end ignore */
 @tailwind utilities;
 
+/* Smooth scroll */
+html, body {
+    scroll-behavior: smooth;
+}
 
 /* Pulsing Animation */
 .waves {

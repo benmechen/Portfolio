@@ -13,7 +13,7 @@ html, body {
 .waves {
     /* background: rgba(255, 255, 255, .3) */
     position: absolute;
-    background: black;
+    background: #0e1111;
     width: 50%;
     height: 50%;
     content: "";
@@ -23,7 +23,7 @@ html, body {
 
 .waves:before {
     position: absolute;
-    background: black;
+    background: #0e1111;
     /* margin-left: -12px; */
     /* margin-top: -12px; */
     width: 100%;
@@ -36,7 +36,7 @@ html, body {
 
 .waves:after {
     position: absolute;
-    background: black;
+    background: #0e1111;
     /* margin-left: -12px; */
     /* margin-top: -12px; */
     width: 100%;

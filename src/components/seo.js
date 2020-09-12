@@ -70,7 +70,7 @@ function SEO({ description, lang, meta, keywords, title }) {
             titleTemplate={`%s | ${site.siteMetadata.title}`}
         >
             <link
-                href="https://fonts.googleapis.com/css2?family=Arvo:wght@400;700&display=swap"
+                href="https://fonts.googleapis.com/css2?family=Arvo:wght@200;300;400;500;600;700&display=swap"
                 rel="stylesheet"
             />
         </Helmet>

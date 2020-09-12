@@ -1,5 +1,6 @@
 import React from "react"
-import Layout from "../layout"
+import Layout from "../../layout"
+import Experience from "./Experience/"
 
 const AboutPage = (_, ref) => {
     return (
@@ -13,6 +14,7 @@ const AboutPage = (_, ref) => {
                 </div>
                 <div className="h-full w-1/2 text-center">
                     <h1 className="text-2xl text-white">Experience</h1>
+                    <Experience />
                 </div>
             </div>
         </Layout>

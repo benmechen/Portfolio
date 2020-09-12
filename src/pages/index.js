@@ -4,7 +4,7 @@ import SEO from "../components/seo"
 import Header from "../components/header"
 import { useStaticQuery, graphql } from "gatsby"
 import HomePage from "../components/pages/home"
-import AboutPage from "../components/pages/about"
+import AboutPage from "../components/pages/about/"
 
 const IndexPage = () => {
     const { site } = useStaticQuery(graphql`

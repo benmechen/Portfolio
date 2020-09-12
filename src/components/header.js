@@ -20,7 +20,7 @@ const Header = ({ aboutRef }) => {
         document.addEventListener('scroll', handleScroll)
 
         return () => {
-        document.removeEventListener('scroll', handleScroll)
+            document.removeEventListener('scroll', handleScroll)
         }
     }, [navBackground])
 
@@ -50,7 +50,7 @@ const Header = ({ aboutRef }) => {
                 <nav
                     className={`${
                         isExpanded ? `block` : `hidden`
-                    } md:block md:flex md:items-center w-full md:w-auto`}
+                    } md:flex md:items-center w-full md:w-auto`}
                 >
                     {[
                         {

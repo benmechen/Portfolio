@@ -5,7 +5,7 @@ import Form from "./form"
 const ContactPage = (_, ref) => {
     const [success, setSuccess] = useState(false)
 
-    const handleSubmit = async (name, email, message) => {
+    const handleSubmit = async (name, email, message, token) => {
         await fetch(process.env.SES_ENDPOINT, {
             method: "POST",
             mode: "no-cors",
@@ -20,7 +20,8 @@ const ContactPage = (_, ref) => {
                     <p><span style="font-weight: bold">From: </span>${name}</p>
                     <p><span style="font-weight: bold">Email: </span>${email}</p>
                     <p><span style="font-weight: bold">Message: <br /></span>${message}</p>
-                `
+                `,
+                token
             })
         })
 

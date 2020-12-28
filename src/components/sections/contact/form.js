@@ -1,18 +1,24 @@
 import React, { useState } from "react"
+import Reaptcha from "reaptcha"
 import PropTypes from "prop-types"
 import Input from "./input"
 import Button from "./button"
 
 const Form = ({ onSubmit }) => {
+    const [token, setToken] = useState(null)
     const [name, setName] = useState()
     const [email, setEmail] = useState()
     const [message, setMessage] = useState()
+
+    const onVerify = (token) => {
+        setToken(token)
+    }
 
     return (
         <form
             onSubmit={(e) => {
                 e.preventDefault()
-                onSubmit(name, email, message)
+                if (token) onSubmit(name, email, message, token)
             }}
             className="flex flex-col"
         >
@@ -37,7 +43,13 @@ const Form = ({ onSubmit }) => {
                 rows="6"
                 large
             />
-            <Button title="Send" />
+            <div className="mb-2">
+                <Reaptcha
+                    sitekey={process.env.RECAPTCHA_KEY}
+                    onVerify={onVerify}
+                />
+            </div>
+            <Button title="Send" disabled={!token} />
         </form>
     )
 }

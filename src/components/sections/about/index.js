@@ -12,13 +12,13 @@ const AboutPage = (_, ref) => {
             id="about"
         >
             <div className="flex flex-col md:flex-row w-full h-full" id="about">
-                <div className="h-full w-full md:w-1/2 text-center border-white border-r">
+                <div className="min-h-full w-full md:w-1/2 text-center md:border-white md:border-r">
                     <h1 className="text-2xl text-white">About</h1>
-                    <div className="grid grid-cols-3 items-start mt-16">
-                        <div className="col-span-1">
+                    <div className="grid grid-cols-1 md:grid-cols-3 items-start mt-16">
+                        <div className="col-span-1 ml-4 md:ml-0">
                             <img src={headshot} />
                         </div>
-                        <div className="text-white col-span-2 text-left ml-4">
+                        <div className="text-white col-span-2 text-left ml-4 mt-4 md:mt-0">
                             <p className="font-medium">
                                 Hey 👋! I&apos;m a full stack web and app
                                 developer from Bournemouth.
@@ -58,7 +58,7 @@ const AboutPage = (_, ref) => {
                         </div>
                     </div>
                 </div>
-                <div className="h-full w-full md:w-1/2 text-center">
+                <div className="min-h-full w-full md:w-1/2 text-center">
                     <h1 className="text-2xl text-white">Experience</h1>
                     <Experience />
                 </div>

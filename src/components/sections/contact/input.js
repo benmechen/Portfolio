@@ -2,7 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 
 const Input = ({ label, large, className, ...props }) => (
-    <div className="flex flex-col">
+    <div className="flex flex-col w-full">
         <label htmlFor={label} className="text-white text-xs font-light">
             {label}
         </label>

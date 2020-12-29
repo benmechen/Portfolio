@@ -6,15 +6,15 @@ const ContactPage = (_, ref) => {
     const [success, setSuccess] = useState(false)
 
     const handleSubmit = async (name, email, message, token) => {
-        await fetch(process.env.SES_ENDPOINT, {
+        await fetch(process.env.GATSBY_SES_ENDPOINT, {
             method: "POST",
             mode: "no-cors",
             headers: {
                 "Content-Type": "application/json",
-                "x-api-key": process.env.SES_API_KEY
+                "x-api-key": process.env.GATSBY_SES_API_KEY
             },
             body: JSON.stringify({
-                toEmails: [process.env.EMAIL],
+                toEmails: [process.env.GATSBY_EMAIL],
                 subject: "BM - New Message",
                 message: `
                     <p><span style="font-weight: bold">From: </span>${name}</p>

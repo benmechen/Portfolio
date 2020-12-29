@@ -44,6 +44,7 @@ const Form = ({ onSubmit }) => {
                 large
             />
             <div className="mb-2">
+                {process.env.RECAPTCHA_KEY}
                 <Reaptcha
                     sitekey={process.env.RECAPTCHA_KEY}
                     onVerify={onVerify}

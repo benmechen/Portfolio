@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import PropTypes from "prop-types"
 import Layout from "../../layout"
 import Experience from "./Experience"
@@ -69,14 +69,25 @@ const AboutPage = (_, ref) => {
 
 export default React.forwardRef(AboutPage)
 
-const TechnologyItem = ({ children }) => (
-    <span
-        className="border border-white py-1 px-2 w-auto m-1"
-        style={{ boxShadow: "2px 2px 0px 0px rgba(255,255,255,1)" }}
-    >
-        {children}
-    </span>
-)
+const TechnologyItem = ({ children }) => {
+    const [isHover, setHover] = useState(false)
+
+    return (
+        <span
+            onMouseEnter={() => setHover(true)}
+            onMouseLeave={() => setHover(false)}
+            className="border border-white py-1 px-2 w-auto m-1 cursor-default transition-all duration-200"
+            style={{
+                boxShadow: `${isHover ? "4" : "2"}px ${
+                    isHover ? "4" : "2"
+                }px 0px 0px rgba(255,255,255,1)`
+            }}
+        >
+            {children}
+        </span>
+    )
+}
+
 TechnologyItem.propTypes = {
     children: PropTypes.string.isRequired
 }

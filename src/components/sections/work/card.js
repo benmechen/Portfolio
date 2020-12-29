@@ -35,6 +35,7 @@ const Card = ({
             <a href={link} target="blank">
                 <img src={image} alt={title} className="rounded" />
             </a>
+            <span className="my-2"></span>
             {children}
         </div>
     )

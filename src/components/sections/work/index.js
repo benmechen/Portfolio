@@ -8,6 +8,12 @@ import ride from "../../../images/ride.png"
 import fe from "../../../images/fe.png"
 import codeset from "../../../images/codeset.png"
 import movingon from "../../../images/movingon.png"
+import BotherDescription from "./descriptions/Bother"
+import LeastDescription from "./descriptions/Least"
+import FootballExchangeDescription from "./descriptions/FootballExchange"
+import RideDescription from "./descriptions/Ride"
+import CodeSetDescription from "./descriptions/CodeSet"
+import MovingOnDescription from "./descriptions/MovingOn"
 
 const WorkPage = (_, ref) => {
     const [hoverIndex, setHoverIndex] = useState(null)
@@ -16,35 +22,39 @@ const WorkPage = (_, ref) => {
         {
             title: "Bother",
             image: bother,
-            link: "https://webother.co.uk"
+            link: "https://webother.co.uk",
+            description: <BotherDescription />
         },
         {
             title: "Least",
             image: least,
-            link: "https://getleast.com"
+            link: "https://getleast.com",
+            description: <LeastDescription />
         },
         {
             title: "Football Exchange",
             image: fe,
-            link: "https://footballexchange.com"
+            link: "https://footballexchange.com",
+            description: <FootballExchangeDescription />
         },
         {
             title: "Ride",
             image: ride,
             link:
-                "https://apps.apple.com/gb/app/ride-friendly-lifts/id1455407107"
+                "https://apps.apple.com/gb/app/ride-friendly-lifts/id1455407107",
+            description: <RideDescription />
         },
         {
             title: "CodeSet",
             image: codeset,
             link: "https://github.com/benmechen/CodeSet",
-            description: "I built this."
+            description: <CodeSetDescription />
         },
         {
             title: "Moving On Counselling",
             image: movingon,
             link: "https://movingoncounselling.co.uk/",
-            description: "I built this."
+            description: <MovingOnDescription />
         }
     ]
 

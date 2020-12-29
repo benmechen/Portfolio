@@ -49,7 +49,13 @@ const Form = ({ onSubmit }) => {
                     onVerify={onVerify}
                 />
             </div>
-            <Button title="Send" disabled={!token} />
+            <Button
+                title="Send"
+                disabled={!token}
+                className={`${
+                    !token && "opacity-25 cursor-not-allowed"
+                } transition-opacity duration-200`}
+            />
         </form>
     )
 }

@@ -32,6 +32,7 @@ const ContactPage = (_, ref) => {
         <Layout
             className="bg-black h-full flex flex-col justify-between items-center pb-24"
             ref={ref}
+            id="contact"
         >
             {success ? (
                 <div className="h-full flex items-center justify-center">

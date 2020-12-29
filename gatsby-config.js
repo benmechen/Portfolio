@@ -6,7 +6,7 @@ const fullConfig = resolveConfig(tailwindConfig)
 module.exports = {
     siteMetadata: {
         title: `Ben Mechen`,
-        description: `Full stack web and app developer`,
+        description: `Full stack web and app developer based in Dorset.`,
         author: `Ben Mechen`
     },
     plugins: [
@@ -15,13 +15,13 @@ module.exports = {
         {
             resolve: `gatsby-plugin-manifest`,
             options: {
-                name: `gatsby-starter-tailwind`,
+                name: `Ben Mechen`,
                 short_name: `starter`,
                 start_url: `/`,
                 background_color: fullConfig.theme.colors.white,
                 theme_color: fullConfig.theme.colors.teal["400"],
                 display: `minimal-ui`,
-                icon: `src/images/tailwind-icon.png`
+                icon: `src/images/icon.png`
             }
         },
         {
@@ -36,6 +36,14 @@ module.exports = {
                 ]
             }
         },
-        `gatsby-plugin-offline`
+        `gatsby-plugin-offline`,
+        {
+            resolve: `gatsby-plugin-google-gtag`,
+            options: {
+                trackingIds: [
+                    "G-H9WMHPM3VJ" // Google Analytics / GA
+                ]
+            }
+        }
     ]
 }

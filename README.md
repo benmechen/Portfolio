@@ -1,6 +1,7 @@
-# Gatsby Starter Tailwind
+# Personal Portfolio
 
 [![All Contributors](https://img.shields.io/badge/all_contributors-7-orange.svg?style=flat-square)](#contributors)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/0010e623-639e-4ff5-8552-328d723bed2e/deploy-status)](https://app.netlify.com/sites/ben-mechen-portfolio/deploys)
 
 <div align="center">
   <img src="https://image.ibb.co/cJjPN7/gatsby_tailwind.png" alt="Gatsby and Tailwind CSS logos">

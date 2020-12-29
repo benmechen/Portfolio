@@ -1,6 +1,6 @@
 import { useStaticQuery, graphql } from "gatsby"
 import PropTypes from "prop-types"
-import React from "react"
+import React, { useEffect } from "react"
 import { Helmet } from "react-helmet"
 
 function SEO({ description, lang, meta, keywords, title }) {
@@ -15,6 +15,16 @@ function SEO({ description, lang, meta, keywords, title }) {
             }
         }
     `)
+
+    useEffect(() => {
+        window.dataLayer = window.dataLayer || []
+        function gtag() {
+            window.dataLayer.push(arguments)
+        }
+        gtag("js", new Date())
+
+        gtag("config", "G-H9WMHPM3VJ")
+    }, [])
 
     const metaDescription = description || site.siteMetadata.description
 
@@ -73,6 +83,10 @@ function SEO({ description, lang, meta, keywords, title }) {
                 href="https://fonts.googleapis.com/css2?family=Arvo:wght@200;300;400;500;600;700&display=swap"
                 rel="stylesheet"
             />
+            <script
+                async
+                src="https://www.googletagmanager.com/gtag/js?id=G-H9WMHPM3VJ"
+            ></script>
         </Helmet>
     )
 }

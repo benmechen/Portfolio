@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react"
 import PropTypes from "prop-types"
+import LazyLoad from "react-lazyload"
 
 const Card = ({
     index,
@@ -33,7 +34,9 @@ const Card = ({
         >
             <h1 className="text-xl">{title}</h1>
             <a href={link} target="blank">
-                <img src={image} alt={title} className="rounded" />
+                <LazyLoad width={468} height={256}>
+                    <img src={image} alt={title} className="rounded" />
+                </LazyLoad>
             </a>
             <span className="my-2"></span>
             {children}

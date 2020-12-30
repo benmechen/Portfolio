@@ -3,7 +3,7 @@ import Event from "./Event"
 
 const Experience = () => {
     return (
-        <div className="w-full h-full flex flex-col items-end relative p-10 text-right text-white">
+        <div className="w-full h-full flex flex-col items-end relative md:p-10 text-right text-white">
             <Event
                 title="Chelsea Apps"
                 subtitle="Lead developer at Chelsea Apps"

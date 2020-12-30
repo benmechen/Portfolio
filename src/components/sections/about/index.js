@@ -11,8 +11,8 @@ const AboutPage = (_, ref) => {
             ref={ref}
             id="about"
         >
-            <div className="flex flex-col md:flex-row w-full h-full" id="about">
-                <div className="min-h-full w-full md:w-1/2 text-center md:border-white md:border-r">
+            <div className="flex flex-row flex-wrap w-full h-full" id="about">
+                <div className="min-h-full w-full md:w-1/2 text-center md:border-white md:border-r pr-2">
                     <h1 className="text-2xl text-white">About</h1>
                     <div className="grid grid-cols-1 md:grid-cols-3 items-start mt-16">
                         <div className="col-span-1 ml-4 md:ml-0">
@@ -58,7 +58,7 @@ const AboutPage = (_, ref) => {
                         </div>
                     </div>
                 </div>
-                <div className="min-h-full w-full md:w-1/2 text-center">
+                <div className="min-h-full w-full md:w-1/2 text-center mt-10 pt-10 border-white border-t md:mt-0 md:pt-0 md:border-t-0">
                     <h1 className="text-2xl text-white">Experience</h1>
                     <Experience />
                 </div>

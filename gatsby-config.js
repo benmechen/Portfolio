@@ -7,11 +7,13 @@ module.exports = {
     siteMetadata: {
         title: `Ben Mechen`,
         description: `Full stack web and app developer based in Dorset.`,
-        author: `Ben Mechen`
+        author: `Ben Mechen`,
+        siteUrl: `https://ben.mechen.co`
     },
     plugins: [
         `gatsby-plugin-eslint`,
         `gatsby-plugin-react-helmet`,
+        `gatsby-plugin-advanced-sitemap`,
         {
             resolve: `gatsby-plugin-manifest`,
             options: {

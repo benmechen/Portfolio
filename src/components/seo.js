@@ -91,6 +91,14 @@ function SEO({ description, lang, meta, keywords, title }) {
                 async
                 src="https://www.googletagmanager.com/gtag/js?id=G-H9WMHPM3VJ"
             ></script>
+            <JsonLd>
+                {{
+                    "@context": "https://schema.org",
+                    "@type": "Organization",
+                    url: "https://ben.mechen.co",
+                    name: "Ben Mechen"
+                }}
+            </JsonLd>
         </Helmet>
     )
 }
@@ -110,3 +118,13 @@ SEO.propTypes = {
 }
 
 export default SEO
+
+const JsonLd = ({ children }) => {
+    return (
+        <Helmet>
+            <script type="application/ld+json">
+                {JSON.stringify(children)}
+            </script>
+        </Helmet>
+    )
+}

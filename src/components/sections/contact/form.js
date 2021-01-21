@@ -25,12 +25,14 @@ const Form = ({ onSubmit }) => {
             <div className="flex flex-row flex-wrap mb-2">
                 <Input
                     label="Name"
+                    required
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                     className="mb-2"
                 />
                 <Input
                     label="Email"
+                    required
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                 />

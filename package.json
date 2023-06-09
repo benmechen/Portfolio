@@ -4,7 +4,7 @@
   "version": "0.1.0",
   "author": "Ben Mechen",
   "dependencies": {
-    "gatsby": "2.24.12",
+    "gatsby": "4.25.7",
     "gatsby-plugin-advanced-sitemap": "^1.5.6",
     "gatsby-plugin-google-gtag": "^2.5.0",
     "gatsby-plugin-manifest": "2.4.21",
